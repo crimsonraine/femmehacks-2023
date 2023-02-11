@@ -29,7 +29,7 @@
 }
 
 .randobox { 
-    text-align: center;
+    text-align: center; 
     color: #5B6254;
     background-color: #D7DBD0;
     width: 300px;
@@ -38,3 +38,15 @@
     margin: 20px;
     border-radius: 10px;
   }
+
+.rating_box {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(20px, auto);
+}
+
+.rating_leaf {
+    width: 80%;
+    height: auto;
+}
