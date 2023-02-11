@@ -6,20 +6,17 @@ chrome.tabs.onUpdated.addListener((tabId, tab) => {
   
       chrome.tabs.sendMessage(tabId, {
         type: "NEW",
-        item_desc_url: urlParameters.get("ASIN"),
+        item_desc_url: getASIN(tab.url) // urlParameters.get("ASIN"),
       });
     }
   });
 
-// function getItemURLName(url) {
-//     var beginning = 23;
-//     var ending = beginning + 1;
-//     for (let i = beginning; i < tab.url.length; i++) {
-//         if (tab.url.substring(i, i+1).equals("/")) {
-//             ending = i;
-//             break;
-//         }
-//     }
-//     return tab.url.substring(beginning, ending);
-// }
+function getASIN(url_asin) {
+    var count = 23;
+    for (let i = beginning; i < url.length - 1; i++) {
+        if (url_asin.substring(i, i+3).equals("dp/")) {
+            return url_asin.substring(i+3, i+ 13)
+        }
+    }
+}
   
