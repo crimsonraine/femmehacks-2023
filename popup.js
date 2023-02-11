@@ -1,5 +1,35 @@
 import { getActiveTabURL } from "./utils.js";
 
+const addNewItem = (itemsElement, item) => {
+    console.log("addNewItem in popup called");
+    const itemTitleElement = document.createElement("div");
+    const newItemElement = document.createElement("div");
+
+    itemTitleElement.textContent = item.title;
+    itemTitleElement.className = "clothes-title";
+    newItemElement.id = "clothes-" + item.asin;
+    newItemElement.className = "clothes";
+    newItemElement.setAttribute("ASIN", item.asin);
+
+    newItemElement.appendChild(itemTitleElement);
+    itemsElement.appendChild(newItemElement);
+};
+
+const viewItems = (current_inventory) => {
+    console.log("viewItems called");
+    const itemsElement = document.getElementById("clothes");
+    itemsElement.innerHTML = "<h5>article of clothing</h5>"; // not working
+
+    if (itemsElement.length > 0) {
+        for (let i = 0; i < current_inventory.length; i++) {
+            const item = current_inventory[i];
+            addNewItem(itemsElement, item);
+        }
+    } else {
+        itemsElement.innerHTML = '<i class = "row">No items saved to display</i>';
+    }
+};
+
 document.addEventListener("DOMContentLoaded", async () => {
     const activeTab = await getActiveTabURL();
     const queryParameters = activeTab.url.split("com/")[1];
@@ -7,10 +37,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const current_item = getASIN(activeTab.url);
 
-    if (activeTab.url.includes("https://www.amazon.com/") && current_item) {
+    if (activeTab.url.includes("amazon.com") && current_item) {
         chrome.storage.sync.get([current_item], (data) => {
-            const currItem = data[current_item] ? JSON.parse(data[current_item]) : [];
-            // viewItems(currItem);
+            console.log("attempt run");
+            const current_inventory = data[current_item] ? JSON.parse(data[current_item]) : [];
+            viewItems(current_inventory);
         });
     } else {
         const container = document.getElementsByClassName("container")[0];

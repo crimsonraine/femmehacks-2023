@@ -18,6 +18,7 @@
             chrome.storage.sync.get([current_item], (obj) => {
                 resolve(obj[current_item] ? JSON.parse(obj[current_item]) : []);
             });
+            console.log("fetched, contentScript");
         });
     };
 
@@ -40,10 +41,8 @@
 
     const addNewItemEventHandler = async () => {
         const activeTab = window.location.href;
-        const queryParameters = activeTab.split("com/")[1];
-        const urlParameters = new URLSearchParams(queryParameters);
-
         const current_item = getASIN(activeTab);
+        console.log("adding" + current_item);
 
         const newItem = {
             asin: getASIN(activeTab),
