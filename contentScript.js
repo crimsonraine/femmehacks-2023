@@ -47,7 +47,8 @@
         const newItem = {
             asin: getASIN(activeTab),
             title: amazon_title.textContent,
-            desc: 'NA'
+            desc: 'NA',
+            link: window.location.href
         }
         current_inventory = await fetch_inventory();
         console.log(newItem);

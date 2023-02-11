@@ -8,16 +8,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
 
-  <link href="popup.css" rel="stylesheet" type="text/css" />
-  <script type="module" src="popup.js"></script>
-  <link rel="stylesheet" href="todolist.css">
-  <script src="todolist.js" defer></script>
+    <link href="popup.css" rel="stylesheet" type="text/css" />
+    <script type="module" src="popup.js"></script>
+    <link rel="stylesheet" href="todolist.css">
+    <script src="todolist.js" defer></script>
 </head>
 
 <body>
-    <div class = "top_bar">
-      <img class="small_logo" src="assets/logo.png">
-      <h1 class="title">EcoPlan</h1>
+    <div class="top_bar">
+        <img class="small_logo" src="assets/logo.png">
+        <h1 class="title">EcoPlan</h1>
     </div>
     <hr>
     <h1 class="welcome">Welcome to EcoPlan!</h1>
@@ -25,46 +25,46 @@
     <div class="divider"></div>
 
     <div class="container">
-      <div class = "title">Your saved Amazon clothing items:</div>
-      <div class = "items" id = "items"></div>
-  </div>
-  
-  <div class="container">
-    <div class = "title">EcoHabit:</div>
-    <div class = "clothes" id = "clothes"></div>
-  </div>
-
-  <div id = "items"></div>
-  <template id = "itemTemplate">
-    <div class = "item">
-      <input type = "checkbox" class = "item-completed">
-      <input type = "text" class = "item-description" placeholder = "To-Do item...">
+        <div class="title">Amazong Clothing Item:</div>
+        <div class="items_wish" id="items_wish"></div>
     </div>
-  </template> 
-  
-  <button id="add">Add Item</button>
-  <button id = "remove"> Remove Item </button>
-  
-  <div class="container">
-    <div class = "title">EcoBoard:</div>
-    <div class = "clothes" id = "clothes"></div>
-  </div>
 
-  <form action = "/cgi-bin/hello_get.cgi" method = "get">
-    <br>
-    <textarea rows = "10" cols = "40" name = "description">
+    <div class="container">
+        <div class="title">EcoHabit:</div>
+        <div class="clothes" id="clothes"></div>
+    </div>
+
+    <div id="items"></div>
+    <template id="itemTemplate">
+        <div class="item">
+            <input type="checkbox" class="item-completed">
+            <input type="text" class="item-description" placeholder="To-Do item...">
+        </div>
+    </template>
+
+    <button id="add">Add Item</button>
+    <button id="remove"> Remove Item </button>
+
+    <div class="container">
+        <div class="title">EcoBoard:</div>
+        <div class="clothes" id="clothes"></div>
+    </div>
+
+    <form action="/cgi-bin/hello_get.cgi" method="get">
+        <br>
+        <textarea rows="10" cols="40" name="description">
     </textarea><br>
- </form>
+    </form>
 
 
-  <div class="Alternatives" id="alternatives"> 
-  
-   <div class = "bottom_navigation">
-    <button><img class = "nav_button" src = "assets/home.png"></button>
-    <button><img class = "nav_button" src = "assets/shop.png"></button>
-    <button><img class = "nav_button" src = "assets/list.png"></button>
-    <button><img class = "nav_button" src = "assets/pencil.png"></button>
-   </div>   
+    <div class="Alternatives" id="alternatives">
+
+        <div class="bottom_navigation">
+            <button><img class="nav_button" src="assets/home.png"></button>
+            <button><img class="nav_button" src="assets/shop.png"></button>
+            <button><img class="nav_button" src="assets/list.png"></button>
+            <button><img class="nav_button" src="assets/pencil.png"></button>
+        </div>
 </body>
 
 </html>

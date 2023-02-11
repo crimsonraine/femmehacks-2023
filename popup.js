@@ -6,10 +6,11 @@ const addNewItem = (itemsElement, item) => {
     const newItemElement = document.createElement("div");
 
     itemTitleElement.textContent = item.title;
-    itemTitleElement.className = "clothes-title";
-    newItemElement.id = "clothes-" + item.asin;
-    newItemElement.className = "clothes";
+    itemTitleElement.className = "items_wish-title";
+    newItemElement.id = "items_wish-" + item.asin;
+    newItemElement.className = "item";
     newItemElement.setAttribute("ASIN", item.asin);
+    newItemElement.setAttribute("location", item.link);
 
     newItemElement.appendChild(itemTitleElement);
     itemsElement.appendChild(newItemElement);
@@ -17,7 +18,7 @@ const addNewItem = (itemsElement, item) => {
 
 const viewItems = (current_inventory) => {
     console.log("viewItems called");
-    const itemsElement = document.getElementById("items");
+    const itemsElement = document.getElementById("items_wish");
     itemsElement.innerHTML = "";
 
     if (current_inventory.length > 0) {
@@ -29,6 +30,15 @@ const viewItems = (current_inventory) => {
         itemsElement.innerHTML = '<i class = "row">No items saved to display</i>';
     }
 };
+
+const setAddtoListAttributes =  (src, eventListener, controlParentElement) => {
+    const controlElement = document.createElement("img");
+  
+    controlElement.src = "assets/" + src + ".png";
+    controlElement.title = src;
+    controlElement.addEventListener("click", eventListener);
+    controlParentElement.appendChild(controlElement);
+  };
 
 document.addEventListener("DOMContentLoaded", async () => {
     const activeTab = await getActiveTabURL();
