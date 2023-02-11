@@ -15,37 +15,59 @@
 </head>
 
 <body>
-    <h1 class="title"><img class="small_logo" src="assets/logo.png">EcoPlan</h1>
+    <div class = "top_bar">
+      <img class="small_logo" src="assets/logo.png">
+      <h1 class="title">EcoPlan</h1>
+    </div>
     <hr>
     <h1 class="welcome">Welcome to EcoPlan!</h1>
 
-    <div class="container">
-        <div class = "title">Your saved Amazon clothing items:</div>
-        <div class = "items" id = "items"></div>
-    </div>
-    <!-- <button id = "adding" onclick="addNewBookmark()">
+    <div class="divider"></div>
 
+    <div class="container">
+      <div class = "title">Your saved Amazon clothing items:</div>
+      <div class = "clothes" id = "clothes"></div>
+  </div>
   
-  <h1 class="title"><img class = "small_logo" src="assets/logo.png">EcoPlan</h1>
-  <hr>
-  <h1 class = "welcome">Welcome to EcoPlan!</h1>
+  <div class="container">
+    <div class = "title">EcoHabit:</div>
+    <div class = "clothes" id = "clothes"></div>
+  </div>
+
+  <div id = "items"></div>
+  <template id = "itemTemplate">
+    <div class = "item">
+      <input type = "checkbox" class = "item-completed">
+      <input type = "text" class = "item-description" placeholder = "To-Do item...">
+    </div>
+  </template> 
   
-  <div class="divider"></div>
-      
-  <h2 class = "message">To get started, please open an Amazon product page.</h2>
+  <button id="add">Add Item</button>
+  <button id = "remove"> Remove Item </button>
   
-  <!-- <button id = "adding" onclick="addNewBookmark()">
+  <div class="container">
+    <div class = "title">EcoBoard:</div>
+    <div class = "clothes" id = "clothes"></div>
+  </div>
+
+  <form action = "/cgi-bin/hello_get.cgi" method = "get">
+    <br>
+    <textarea rows = "10" cols = "40" name = "description">
+    </textarea><br>
+ </form>
+  
+  <button id = "adding" onclick="addNewBookmark()">
       <img id = "adding_button_pic" src="assets/logo.png" alt="buttonpng"/>
   </button>
 
-  <div class="Alternatives" id="alternatives"> -->
-
-    <div class="navigation">
-        <button><img class="nav_button" src="assets/home.png"></button>
-        <button><img class="nav_button" src="assets/shop.png"></button>
-        <button><img class="nav_button" src="assets/list.png"></button>
-        <button><img class="nav_button" src="assets/pencil.png"></button>
-    </div>
+  <div class="Alternatives" id="alternatives"> 
+  
+   <div class = "bottom_navigation">
+    <button><img class = "nav_button" src = "assets/home.png"></button>
+    <button><img class = "nav_button" src = "assets/shop.png"></button>
+    <button><img class = "nav_button" src = "assets/list.png"></button>
+    <button><img class = "nav_button" src = "assets/pencil.png"></button>
+   </div>   
 </body>
 
 </html>

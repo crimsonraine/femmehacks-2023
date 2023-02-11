@@ -1,6 +1,7 @@
 const ITEMS_CONTAINER = document.getElementById("items"); 
 const ITEM_TEMPLATE = document.getElementById("itemTemplate");
 const ADD_BUTTON = document.getElementById("add");
+const REMOVE_BUTTON = document.getElementById("remove"); 
 
 let items = getItems(); 
 
@@ -23,6 +24,14 @@ function addItem() {
     });
 
     setItems(items); 
+    refreshList(); 
+}
+
+function removeItem() { 
+    items.shift({
+        description: "nothing", 
+        completed: true
+    });
     refreshList(); 
 }
 
@@ -70,4 +79,8 @@ function refreshList() {
 ADD_BUTTON.addEventListener("click", () => { 
     addItem(); 
 });
+
+REMOVE_BUTTON.addEventListener("click", () => { 
+    removeItem();
+})
 refreshList(); 
