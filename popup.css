@@ -1,8 +1,56 @@
+/* html {
+  border-radius: 0%;
+} */
+
+body {
+  font-family: 'Nunito', sans-serif;
+  width: 450px;
+}
+
+.small_logo {
+  width: 5%;
+  height: auto;
+}
+
 .title {
     font-size: 14px;
     font-weight: bold;
     padding: 8px;
-  }
+    vertical-align: -webkit-baseline-middle;
+}
+
+.welcome {
+  font-size: 18px;
+  color: #5B6254;
+  font-weight: bold;
+  text-align: center;
+  padding: 4px;
+}
+
+.divider {
+  background-color: #EEEDEE;
+  width: 100%;
+  height: 7px;
+}
+
+.message {
+  font-size: 16px;
+  color: #5B6254;
+  font-weight: bold;
+  text-align: center;
+  padding: 4px;
+}
+
+.navigation {
+  background-color: #EEEDEE;
+  width: auto;
+  height: 75px;
+}
+
+.nav_button {
+  width: 30%;
+  height: auto;
+}
 
 #adding_button_pic img {
     width: 18px;

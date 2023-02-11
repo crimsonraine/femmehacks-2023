@@ -26,9 +26,9 @@
     ],
     "action": {
       "default_icon": {
-        "16": "assets/logo.png",
-        "24": "assets/logo.png",
-        "32": "assets/logo.png"
+        "16": "assets/toolbar_logo.png",
+        "24": "assets/toolbar_logo.png",
+        "32": "assets/toolbar_logo.png"
       },
       "default_title": "Your Eco Amazon Friend",
       "default_popup": "popup.html"
