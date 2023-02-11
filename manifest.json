@@ -1,0 +1,34 @@
+{
+    "name": "Your Eco Amazon Friend",
+    "version": "0.1.0",
+    "description": "Recommending Eco Friendly Amazon Alternatives",
+    "permissions": ["storage", "tabs"],
+    "host_permissions": ["https://www.amazon.com/*"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://www.amazon.com/*"],
+        "js": ["contentScript.js"]
+      }
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": [
+          "assets/logo.png"
+        ],
+        "matches": ["https://www.amazon.com/*"]
+      }
+    ],
+    "action": {
+      "default_icon": {
+        "16": "assets/NA.png",
+        "24": "assets/NA.png",
+        "32": "assets/NA.png"
+      },
+      "default_title": "Your Eco Amazon Friend",
+      "default_popup": "popup.html"
+    },
+    "manifest_version": 3
+}
