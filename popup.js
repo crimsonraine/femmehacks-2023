@@ -17,10 +17,10 @@ const addNewItem = (itemsElement, item) => {
 
 const viewItems = (current_inventory) => {
     console.log("viewItems called");
-    const itemsElement = document.getElementById("clothes");
+    const itemsElement = document.getElementById("items");
     itemsElement.innerHTML = "<h5>article of clothing</h5>"; // not working
 
-    if (itemsElement.length > 0) {
+    if (current_inventory.length > 0) {
         for (let i = 0; i < current_inventory.length; i++) {
             const item = current_inventory[i];
             addNewItem(itemsElement, item);
