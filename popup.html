@@ -30,10 +30,10 @@
   </div>
   
   <div class="container">
-    <div class = "title">Habit Tracker:</div>
+    <div class = "title">EcoHabit:</div>
     <div class = "clothes" id = "clothes"></div>
   </div>
-  
+
   <div id = "items"></div>
   <template id = "itemTemplate">
     <div class = "item">
@@ -45,6 +45,16 @@
   <button id="add">Add Item</button>
   <button id = "remove"> Remove Item </button>
   
+  <div class="container">
+    <div class = "title">EcoBoard:</div>
+    <div class = "clothes" id = "clothes"></div>
+  </div>
+
+  <form action = "/cgi-bin/hello_get.cgi" method = "get">
+    <br>
+    <textarea rows = "10" cols = "40" name = "description">
+    </textarea><br>
+ </form>
   
   <button id = "adding" onclick="addNewBookmark()">
       <img id = "adding_button_pic" src="assets/logo.png" alt="buttonpng"/>
