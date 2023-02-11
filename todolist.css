@@ -16,3 +16,11 @@
     background: #009578; 
     cursor: pointer; 
 }
+
+#remove { 
+    padding: 8px 14px; 
+    font-weight: bold; 
+    color: #ffffff;
+    background: #009578; 
+    cursor: pointer; 
+}
