@@ -8,13 +8,19 @@ body {
 }
 
 .small_logo {
-  width: 5%;
+  width: 8%;
   height: auto;
+}
+
+.top_bar {
+  display: flex;
+  align-items: center;
 }
 
 .title {
     font-size: 14px;
-    font-weight: bold;
+    color: #87986A;
+    font-weight: bolder;
     padding: 8px;
     vertical-align: -webkit-baseline-middle;
 }
@@ -38,18 +44,32 @@ body {
   color: #5B6254;
   font-weight: bold;
   text-align: center;
-  padding: 4px;
+  padding: 25px;
 }
 
-.navigation {
+.bottom_navigation {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(20px, auto);
+
   background-color: #EEEDEE;
   width: auto;
   height: 75px;
 }
 
+button {
+  border: #EEEDEE;
+}
+
 .nav_button {
   width: 30%;
   height: auto;
+  cursor: pointer;
+}
+
+.nav_button:hover {
+ opacity: 0.4;
 }
 
 #adding_button_pic img {
