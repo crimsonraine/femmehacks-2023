@@ -1,4 +1,4 @@
-const ITEMS_CONTAINER = document.getElementById("items"); 
+const ITEMS_CONTAINER = document.getElementById("clothes"); 
 const ITEM_TEMPLATE = document.getElementById("itemTemplate");
 const ADD_BUTTON = document.getElementById("add");
 const REMOVE_BUTTON = document.getElementById("remove"); 
