@@ -9,8 +9,12 @@
 
   <link href="popup.css" rel="stylesheet" type="text/css" />
   <script type="module" src="popup.js"></script>
+  <link rel="stylesheet" href="todolist.css">
+  <script src="todolist.js" defer></script>
 </head>
 <body>
+
+  
   <h1 class="title"><img class = "small_logo" src="assets/logo.png">EcoPlan</h1>
   <hr>
   <h1 class = "welcome">Welcome to EcoPlan!</h1>
@@ -24,6 +28,16 @@
   </button>
 
   <div class="Alternatives" id="alternatives"> -->
+
+  <div id="items">
+    <template id="itemTemplate">
+        <div class="item">
+           <input type="checkbox" class="item-completed">
+            <input type="text" class="item-description" placeholder="To-Do Item...">
+        </div>
+      </template>
+    </div>
+  <button id="add">Add Item</button>
   
    <div class = "navigation">
     <button><img class = "nav_button" src = "assets/home.png"></button>
