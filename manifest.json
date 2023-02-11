@@ -1,9 +1,18 @@
 {
     "name": "Your Eco Amazon Friend",
-    "version": "0.1.0",
+    "version": "0.1",
     "description": "Recommending Eco Friendly Amazon Alternatives",
-    "permissions": ["storage", "tabs"],
+    "permissions": ["storage",
+        "tabs",
+        "webRequest",
+		"webRequestBlocking",
+        "*://www.amazon.com/*",
+		"*://www.amazon.co.uk/*",
+		"*://amazon.com/*",
+		"*://amazon.co.uk/*"
+    ],
     "host_permissions": ["https://www.amazon.com/*"],
+    "homepage_url": "https://github.com/rubenmv/extension-goodreads-ratings-for-amazon",
     "background": {
       "service_worker": "background.js"
     },
