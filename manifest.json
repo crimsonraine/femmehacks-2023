@@ -3,13 +3,7 @@
     "version": "0.1",
     "description": "Recommending Eco Friendly Amazon Alternatives",
     "permissions": ["storage",
-        "tabs",
-        "webRequest",
-		"webRequestBlocking",
-        "*://www.amazon.com/*",
-		"*://www.amazon.co.uk/*",
-		"*://amazon.com/*",
-		"*://amazon.co.uk/*"
+        "tabs"
     ],
     "host_permissions": ["https://www.amazon.com/*"],
     "homepage_url": "https://github.com/rubenmv/extension-goodreads-ratings-for-amazon",
@@ -32,9 +26,9 @@
     ],
     "action": {
       "default_icon": {
-        "16": "assets/NA.png",
-        "24": "assets/NA.png",
-        "32": "assets/NA.png"
+        "16": "assets/logo.png",
+        "24": "assets/logo.png",
+        "32": "assets/logo.png"
       },
       "default_title": "Your Eco Amazon Friend",
       "default_popup": "popup.html"
