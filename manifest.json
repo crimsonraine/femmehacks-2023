@@ -6,7 +6,7 @@
         "tabs"
     ],
     "host_permissions": ["https://www.amazon.com/*"],
-    "homepage_url": "https://github.com/rubenmv/extension-goodreads-ratings-for-amazon",
+    "homepage_url": "https://github.com/crimsonraine/femmehacks-2023",
     "background": {
       "service_worker": "background.js"
     },
@@ -33,5 +33,9 @@
       "default_title": "Your Eco Amazon Friend",
       "default_popup": "popup.html"
     },
+    "externally_connectable": {
+        "matches": ["*://*.amazon.com/*"]
+    },
     "manifest_version": 3
+
 }
