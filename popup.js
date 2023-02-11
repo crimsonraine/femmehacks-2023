@@ -10,8 +10,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (activeTab.url.includes("https://www.amazon.com/") && current_item) {
         chrome.storage.sync.get([current_item], (data) => {
             const currItem = data[current_item] ? JSON.parse(data[current_item]) : [];
-            viewItems(currItem);
+            // viewItems(currItem);
         });
+    } else {
+        const container = document.getElementsByClassName("container")[0];
+        container.innerHTML = '<h2 class="message">To get started, please open an Amazon product page.</h2>';
     }
 
     function getASIN(url_asin) {
