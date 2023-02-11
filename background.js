@@ -6,7 +6,7 @@ chrome.tabs.onUpdated.addListener((tabId, tab) => {
   
       chrome.tabs.sendMessage(tabId, {
         type: "NEW",
-        item_desc_url: urlParameters.get("ASIN"),
+        item_desc_url: queryParameters // urlParameters.get("ASIN"),
       });
     }
   });
