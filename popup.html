@@ -1,16 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>EcoPlan</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+<head>
+    <title>EcoPlan</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
 
   <link href="popup.css" rel="stylesheet" type="text/css" />
   <script type="module" src="popup.js"></script>
+  <link rel="stylesheet" href="todolist.css">
+  <script src="todolist.js" defer></script>
 </head>
+
 <body>
+    <h1 class="title"><img class="small_logo" src="assets/logo.png">EcoPlan</h1>
+    <hr>
+    <h1 class="welcome">Welcome to EcoPlan!</h1>
+
+    <div class="container">
+        <div class = "title">Your saved Amazon clothing items:</div>
+        <div class = "items" id = "items"></div>
+    </div>
+    <!-- <button id = "adding" onclick="addNewBookmark()">
+
+  
   <div class = "top_bar">
     <img class = "small_logo" src="assets/logo.png">
     <h1 class="title">EcoPlan</h1>
@@ -35,5 +50,5 @@
     <button><img class = "nav_button" src = "assets/pencil.png"></button>
    </div>   
 </body>
-</html>
 
+</html>
