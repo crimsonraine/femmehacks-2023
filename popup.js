@@ -11,7 +11,7 @@ let rankings = {
     'recycled wool':5,
     'organic cotton':4,
     'hemp':4,
-    'linen (not organic)':4,
+    'linen':4,
     'silk':4,
     'recycled polyester':3,
     'recycled nylon':3,
@@ -30,25 +30,53 @@ let rankings = {
     'spandex':1
 };
 
+let leaves = ["leaf1", "leaf2", "leaf3", "leaf4", "leaf5"];
+
 const addNewItem = (itemsElement, item) => {
     console.log("addNewItem in popup called");
     const itemTitleElement = document.createElement("div");
     const newItemElement = document.createElement("div");
 
     itemTitleElement.textContent = item.title;
-    itemTitleElement.className = "items_wish-title";
-    newItemElement.id = "items_wish-" + item.asin;
-    newItemElement.className = "item";
+    itemTitleElement.className = "amazonitem-title";
+    newItemElement.id = "amazonitem-" + item.asin;
+    newItemElement.className = "amazonitem";
     newItemElement.setAttribute("ASIN", item.asin);
     newItemElement.setAttribute("location", item.link);
-
+    
     newItemElement.appendChild(itemTitleElement);
     itemsElement.appendChild(newItemElement);
+
+    // leaves rating
+    // var rating = rate(item);
+    // console.log(rating);
+    // for (let i = 0; i < rating; i++) {
+    //     var leaf = document.getElementById(leaves[i]);
+    //     leaf.style.visibility == "visible";
+    // }
+    // newItemElement.setAttribute("rating", rating);
+    // item.score = rating;
+
+    // function rate(item) {
+    //     var mats = Object.keys(rankings);
+    //     var no_mats = 0;
+    //     var score = 0;
+    //     for (let k = 0; k < mats.length; k++) {
+    //         console.log(mats[k]);
+    //         if (item.desc.contains(mats[k])) {
+    //             console.log(mats[k]);
+    //             no_mats++;
+    //             score += rankings[mats[k]];
+    //         }
+    //     }
+    //     return Math.round(score / no_mats);
+    // }
 };
 
 const viewItems = (current_inventory) => {
     console.log("viewItems called");
-    const itemsElement = document.getElementById("items_wish");
+    const itemsElement = document.getElementById("amazon_class_name");
+    console.log(itemsElement);
     itemsElement.innerHTML = "";
 
     if (current_inventory.length > 0) {
@@ -71,6 +99,7 @@ const setAddtoListAttributes =  (src, eventListener, controlParentElement) => {
   };
 
 document.addEventListener("DOMContentLoaded", async () => {
+    console.log('called load');
     const activeTab = await getActiveTabURL();
     const queryParameters = activeTab.url.split("com/")[1];
     const urlParameters = new URLSearchParams(queryParameters);
@@ -84,7 +113,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             viewItems(current_inventory);
         });
     } else {
-        const container = document.getElementsByClassName("container")[0];
+        const container = document.getElementsByClassName("amazonitem")[0];
         container.innerHTML = '<h2 class="message">To get started, please open an Amazon product page.</h2>';
     }
 
