@@ -1,0 +1,14 @@
+.image { 
+    height: 50px; 
+    width: 55px;
+    display: inline;
+}
+
+.vertical_align {
+    display: flex;
+    align-items: center;
+}
+
+.text { 
+    display: inline; 
+}
