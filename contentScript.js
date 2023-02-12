@@ -49,7 +49,8 @@
             asin: getASIN(activeTab),
             title: amazon_title.textContent,
             desc: getFeatures(amazon_feature_list),
-            link: window.location.href
+            link: window.location.href,
+            score: 0
         }
         current_inventory = await fetch_inventory();
         console.log(newItem);
@@ -73,9 +74,10 @@
                 if (listEle === undefined) break;
                 var val = listEle.getElementsByClassName("a-list-item")[0].innerText.toString();
                 console.log(val);
-                featureString += (val);
+                featureString += " " + (val);
             }
             console.log(featureString);
+            return(featureString.toLowerCase());
         }
     }
 
