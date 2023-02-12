@@ -19,7 +19,8 @@
     "web_accessible_resources": [
       {
         "resources": [
-          "assets/logo.png"
+          "assets/logo.png",
+          "assets/plus.png"
         ],
         "matches": ["https://www.amazon.com/*"]
       }

@@ -1,5 +1,35 @@
 import { getActiveTabURL } from "./utils.js";
 
+let rankings = {
+    'organic hemp': 5,
+    'organic linen': 5,
+    'bamboo': 5,
+    'recycled polyester': 5,
+    'lyocell': 5,
+    'tencel':5,
+    'recycled cotton':5,
+    'recycled wool':5,
+    'organic cotton':4,
+    'hemp':4,
+    'linen (not organic)':4,
+    'silk':4,
+    'recycled polyester':3,
+    'recycled nylon':3,
+    'organic wool': 3,
+    'alpaca': 3,
+    'cotton':2,
+    'rayon':2,
+    'viscose ':2,
+    'wool':2,
+    'cashmere':2,
+    'modal':2,
+    'leather':2,
+    'polyester':1,
+    'acrylic':1,
+    'nylon (not recycled)':1,
+    'spandex':1
+};
+
 const addNewItem = (itemsElement, item) => {
     console.log("addNewItem in popup called");
     const itemTitleElement = document.createElement("div");
