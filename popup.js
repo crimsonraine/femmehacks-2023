@@ -48,34 +48,34 @@ const addNewItem = (itemsElement, item) => {
     itemsElement.appendChild(newItemElement);
 
     // leaves rating
-    var rating = rate(item);
-    console.log(rating);
-    for (let i = 0; i < rating; i++) {
-        var leaf = document.getElementById(leaves[i]);
-        leaf.style.visibility == "visible";
-    }
-    newItemElement.setAttribute("rating", rating);
-    item.score = rating;
+    // var rating = rate(item);
+    // console.log(rating);
+    // for (let i = 0; i < rating; i++) {
+    //     var leaf = document.getElementById(leaves[i]);
+    //     leaf.style.visibility == "visible";
+    // }
+    // newItemElement.setAttribute("rating", rating);
+    // item.score = rating;
 
-    function rate(item) {
-        var mats = Object.keys(rankings);
-        var no_mats = 0;
-        var score = 0;
-        for (let k = 0; k < mats.length; k++) {
-            console.log(mats[k]);
-            if (item.desc.contains(mats[k])) {
-                console.log(mats[k]);
-                no_mats++;
-                score += rankings[mats[k]];
-            }
-        }
-        return Math.round(score / no_mats);
-    }
+    // function rate(item) {
+    //     var mats = Object.keys(rankings);
+    //     var no_mats = 0;
+    //     var score = 0;
+    //     for (let k = 0; k < mats.length; k++) {
+    //         console.log(mats[k]);
+    //         if (item.desc.contains(mats[k])) {
+    //             console.log(mats[k]);
+    //             no_mats++;
+    //             score += rankings[mats[k]];
+    //         }
+    //     }
+    //     return Math.round(score / no_mats);
+    // }
 };
 
 const viewItems = (current_inventory) => {
     console.log("viewItems called");
-    const itemsElement = document.getElementsByClassName("amazon_class_name");
+    const itemsElement = document.getElementById("amazon_class_name");
     console.log(itemsElement);
     itemsElement.innerHTML = "";
 
@@ -99,6 +99,7 @@ const setAddtoListAttributes =  (src, eventListener, controlParentElement) => {
   };
 
 document.addEventListener("DOMContentLoaded", async () => {
+    console.log('called load');
     const activeTab = await getActiveTabURL();
     const queryParameters = activeTab.url.split("com/")[1];
     const urlParameters = new URLSearchParams(queryParameters);
