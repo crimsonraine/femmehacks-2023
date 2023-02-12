@@ -28,10 +28,11 @@
         if (!saveButtonExists) {
             const saveButton = document.createElement("img");
 
-            saveButton.src = chrome.runtime.getURL("assets/logo.png");
+            saveButton.src = chrome.runtime.getURL("assets/plus.png");
             saveButton.className = "amazon-button " + "save-btn";
             saveButton.title = "add to list";
             amazon_feature_list = document.getElementsByClassName("a-unordered-list a-vertical a-spacing-mini")[0]; // "a-section""a-unordered-list a-vertical a-spacing-mini")[0];
+            console.log(amazon_feature_list);
             amazon_title = document.getElementsByClassName("a-size-large product-title-word-break")[0];
 
             amazon_feature_list.appendChild(saveButton);
@@ -47,7 +48,7 @@
         const newItem = {
             asin: getASIN(activeTab),
             title: amazon_title.textContent,
-            desc: 'NA',
+            desc: getFeatures(amazon_feature_list),
             link: window.location.href
         }
         current_inventory = await fetch_inventory();
@@ -63,6 +64,18 @@
                     return url_asin.substring(i + 3, i + 13)
                 }
             }
+        }
+
+        function getFeatures(element) {
+            var featureString = "";
+            for (let i = 0; amazon_feature_list.getElementsByTagName('li').length - 2; i++) {
+                var listEle = amazon_feature_list.getElementsByTagName('li')[i];
+                if (listEle === undefined) break;
+                var val = listEle.getElementsByClassName("a-list-item")[0].innerText.toString();
+                console.log(val);
+                featureString += (val);
+            }
+            console.log(featureString);
         }
     }
 
